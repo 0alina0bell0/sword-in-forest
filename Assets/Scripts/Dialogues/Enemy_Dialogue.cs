@@ -16,7 +16,7 @@ public class Enemy_Dialogue : MonoBehaviour
         panelDialog.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
@@ -26,7 +26,7 @@ public class Enemy_Dialogue : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         panelDialog.SetActive(false);
         dialogStart = false;
