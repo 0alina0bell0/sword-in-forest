@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     public Animator animator;
     [SerializeField] private AudioSource Running;
-    
+
 
     public float runSpeed = 0f;
 
@@ -27,13 +27,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Crouch"))
         {
-            Debug.Log("I am here blyat'");
             crouch = true;
-        }else if (Input.GetButtonUp("Crouch"))
+        }
+        else if (Input.GetButtonUp("Crouch"))
         {
             crouch = false;
         }
-        
+
 
     }
 
@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnCrouching(bool isCrouching)
     {
-        Debug.Log("I am here blyat' x2" + isCrouching);
         animator.SetBool("IsCrouching", isCrouching);
     }
 
@@ -57,10 +56,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Ya tuta: " + other);
-        if(other.gameObject.CompareTag("Coins"))
+        if (other.gameObject.CompareTag("Coins"))
         {
-            
+
             Destroy(other.gameObject);
         }
     }
